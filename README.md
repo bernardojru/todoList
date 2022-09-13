@@ -1,5 +1,5 @@
 <h1 align='center'>
-<img src='http://127.0.0.1:5173/src/assets/Logo.svg' alt='todo'/>
+<img src='https://todo-self-ten-79.vercel.app/assets/Logo.558e4f32.svg' alt='todo'/>
 </h1>
 
 <img
