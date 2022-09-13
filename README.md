@@ -36,6 +36,6 @@
 
 <h1>📝 License</h1>
 <p>
-Copyright © 2021 <a href='https://github.com/bernardojru'>bernardojru</a>
+Copyright © 2022 <a href='https://github.com/bernardojru'>bernardojru</a>
 <p>Design and Challenge <a href='https://github.com/Rocketseat'>@Rocketseat</a> </p>
 </p>
