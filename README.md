@@ -1,5 +1,5 @@
 <h1 align='center'>
-<img src='' />
+<img src='http://127.0.0.1:5173/src/assets/Logo.svg' alt='todo'/>
 </h1>
 
 <img
@@ -11,7 +11,8 @@
   alt=""
 />
 
-<p>✨ View project  => <a href=''>link  here</a> </p>
+
+<p>✨ View project  => <a href='https://todo-self-ten-79.vercel.app/'>link  here</a> </p>
 
 <h2>🔥 Install</h2>
 <pre>
