@@ -11,7 +11,7 @@
   alt=""
 />
 
-<p>✨ View project  => <a>link  here</a> </p>
+<p>✨ View project  => <a href=''>link  here</a> </p>
 
 <h2>🔥 Install</h2>
 <pre>
