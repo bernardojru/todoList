@@ -1,97 +1,78 @@
-import { Container, InputArea, Tasks, Info, ListTask } from "./styles/styles";
+import { Container, Tasks, Info, ListTask } from "./styles/styles";
 
 import { FormEvent, ChangeEvent, useState, useEffect } from "react";
 
-import { PlusCircle } from "phosphor-react";
 import { Empty } from "./components/Empty";
 
 import { Header } from "./components/Header";
 import { Task } from "./components/Task";
 
-interface ITasks {
-  id: number;
+export interface ITasks {
+  id: string;
   title: string;
-  isComplete: boolean;
+  isCompleted: boolean;
 }
 
 export function App() {
-  const [task, setTask] = useState<string[]>([]);
-  const [newTask, setNewTask] = useState("");
-  const [counterTask, setCounterTask] = useState(0);
-  const [done, setDone] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
+  const [tasks, setTasks] = useState<ITasks[]>([]);
+  const tasksQuantity = tasks.length;
+  const completedTasks = tasks.filter((task) => task.isCompleted).length;
 
-  function handleCreateNewTask(e: FormEvent) {
-    e.preventDefault();
-
-    setTask([...task, newTask]);
-
-    setNewTask("");
+  function handleAddTask(taskTitle: string) {
+    setTasks([
+      ...tasks,
+      {
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false,
+      },
+    ]);
   }
 
-  function handleNewTaskChange(e: any) {
-    setNewTask(e.target.value);
+  function handleDeleteTaskById(taskId: string) {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
   }
 
-  useEffect(() => {
-    function handleCreatedCounterTask() {
-      if (task.length > 0 && task.length >= 0) {
-        setCounterTask(counterTask + 1);
-      } else if (task.length === 0) {
-        setCounterTask(0);
+  function handleToggleTaskCompletedById(taskId: string) {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted,
+        };
       }
-    }
-    handleCreatedCounterTask();
-  }, [task]);
-
-  function handleCheckTask() {
-    setIsComplete((prev) => !prev);
-  }
-
-  function deleteTask(taskToDelete: string) {
-    const taskDeleteOne = task.filter((i) => {
-      return i !== taskToDelete;
+      return task;
     });
-    setTask(taskDeleteOne);
+    setTasks(newTasks);
   }
 
   return (
     <Container>
-      <Header />
-
-      <InputArea onSubmit={handleCreateNewTask}>
-        <input
-          value={newTask}
-          onChange={handleNewTaskChange}
-          required
-          type="text"
-          placeholder="Adicionar uma nova tarefa"
-        />
-        <button>
-          Criar
-          <PlusCircle size={16} />
-        </button>
-      </InputArea>
+      <Header handleAddTask={handleAddTask} />
 
       <Tasks>
         <Info>
-          <p>
-            Tarefas criadas <span>{counterTask}</span>
-          </p>
-          <p>
-            Concluídas <span>{done}</span>
-          </p>
+          <div>
+            <p>Tarefas criadas</p>
+            <span>{tasksQuantity}</span>
+          </div>
+          <div>
+            <p className="textPurple">Concluídas</p>
+            <span>
+              {completedTasks} de {tasksQuantity}
+            </span>
+          </div>
         </Info>
         <ListTask>
-          {task.length > 0 ? (
+          {tasks.length > 0 ? (
             <>
-              {task.map((item, index) => (
+              {tasks.map((task) => (
                 <Task
-                  key={index}
-                  item={item}
-                  onDeleComment={deleteTask}
-                  handleCheckTask={handleCheckTask}
-                  isComplete={isComplete}
+                  handleToggleTaskCompletedById={handleToggleTaskCompletedById}
+                  handleDeleteTaskById={handleDeleteTaskById}
+                  key={task.id}
+                  task={task}
                 />
               ))}
             </>

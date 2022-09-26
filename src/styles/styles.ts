@@ -5,82 +5,51 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`;
 
-export const InputArea = styled.form`
-  margin-top: -27px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  > input {
-    width: 638px;
-    height: 54px;
-    padding-left: 20px;
-    background: var(--gray-500);
-    color: #808080;
-    border: none;
-    border-radius: 6px;
-  }
-
-  > button {
-    width: 90px;
-    height: 52px;
-    background: var(--blue-dark);
-    color: var(--gray-100);
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
 `;
 
 export const Tasks = styled.div`
-  margin-top: 4rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  width: 736px;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  margin-top: 5.625rem;
+  padding: 0 1rem;
 `;
 
 export const Info = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 1.5rem;
+
+div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  gap: 0.8rem;
 
-  > p {
+  p {
     color: var(--blue);
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    font-size: 0.875rem;
+    font-weight: 700;
   }
 
-  > p > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .textPurple {
+    color: var(--purple);
+  }
 
-    border-radius: 10px;
-    font-size: 0.7rem;
-    width: 25px;
-    height: 19px;
-    color: var(--gray-200);
+  span {
     background: var(--gray-400);
+    color: var(--gray-200);
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
   }
+}
 `;
 
 export const ListTask = styled.div`
-  margin: 2rem;
-  border-radius: 4px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 `;

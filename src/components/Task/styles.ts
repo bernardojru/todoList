@@ -13,29 +13,47 @@ export const Container = styled.div`
   border-radius: 6px;
 `;
 
-export const Complete = styled.div<{ done: boolean }>`
+interface isCompletedProps {
+  done: boolean
+}
+
+export const Complete = styled.div<isCompletedProps>`
   cursor: pointer;
   border-radius: 50%;
-  border: ${(props) => (props.done ? "none" : `1px solid var(--blue)`)};
+  border: ${({done}) => (done ? "none" : `1px solid var(--blue)`)};
   padding: 10px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${(props) => (props.done ? `var(--purple-dark)` : "")};
+  background: ${({done}) => (done ? `var(--purple-dark)` : "")};
 
   > svg {
     position: absolute;
   }
 `;
 
-export const Item = styled.div<{ done: boolean }>`
+export const Item = styled.div<isCompletedProps>`
   text-align: start;
   padding-left: 1rem;
   width: 100%;
-  text-decoration: ${(props) => (props.done ? "line-through" : "initial")};
+  text-decoration: ${({done}) => (done ? "line-through" : "initial")};
 `;
 
 export const TrashIcon = styled.div`
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 4px;
+
+  color: var(--gray-300);
+
   cursor: pointer;
+
+  :hover {
+    background: var(--gray-400);
+    
+  }
+  > svg:hover {
+    color: var(--danger);
+  }
 `;

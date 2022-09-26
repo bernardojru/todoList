@@ -21,16 +21,32 @@ export const GlobalStyles = createGlobalStyle`
   --danger: #e25858;
 }
 * {
-        margin: 0;
+       margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Inter", sans-serif;
     }
 
 
-body {
-  font-family: "Inter", sans-serif;
-  background: var(--gray-600);
-  color: white;
-}
+    body {
+       background: var(--gray-600);
+       min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  color: var(--gray-100);
+  overflow-x: hidden;
+    }
 
+    button {
+  cursor: pointer;
+
+    }
+
+    ::-webkit-scrollbar {
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: blue;
+        border-radius: 30px;
+        background-color: var(--gray-400);
+    }
   `;
