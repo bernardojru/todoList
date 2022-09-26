@@ -1,16 +1,10 @@
 <h1 align='center'>
-<img src='https://www.figma.com/file/AUtAJ28ZypXVOwz2Vb54Ge/ToDo-List-(Copy)?node-id=56%3A99' alt='todoImg'/>
+<img src='https://todo-self-ten-79.vercel.app/assets/Logo.558e4f32.svg' alt='todo'/>
 </h1>
 
 <img
-  src="https://user-images.githubusercontent.com/93547947/189654921-226b5a35-4516-4bea-921f-319a1d248c7c.jpeg"
-  alt=""
+  src="https://user-images.githubusercontent.com/93547947/192339138-123a3f8e-4fdd-4432-91d8-489002c4525f.png"
 />
-<img
-  src="https://user-images.githubusercontent.com/93547947/189654897-9e817e5d-dbaf-4dce-9501-d46d170794a1.jpeg"
-  alt=""
-/>
-
 
 <p>✨ View project  => <a href='https://todo-self-ten-79.vercel.app/'>link  here</a> </p>
 

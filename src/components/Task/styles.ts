@@ -27,6 +27,13 @@ export const Complete = styled.div<isCompletedProps>`
   align-items: center;
   justify-content: center;
   background: ${({done}) => (done ? `var(--purple-dark)` : "")};
+  transition: all ease .3s;
+
+  
+  :hover {
+    background: ${({done}) => (done ? `var(--purple)` : `var(--blue-dark)`)};
+
+  }
 
   > svg {
     position: absolute;
